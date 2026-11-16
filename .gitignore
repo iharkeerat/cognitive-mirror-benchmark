@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.env
+.env.*
+private/
+raw-human-data/
+consented-data-private/
+annotations-private/
+raw-logs/
+.DS_Store

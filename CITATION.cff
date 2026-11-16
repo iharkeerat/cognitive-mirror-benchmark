@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Cite this as a working benchmark design, not a validated dataset or peer-reviewed evaluation."
+authors:
+  - family-names: Singh
+    given-names: Harkeerat
+title: "Cognitive Mirror: An Evidence-Aware Benchmark Design for Psychological Inference and Abstention in Language Models"
+type: generic
+keywords:
+  - human-ai interaction
+  - evidence sufficiency
+  - language models
+  - benchmark protocol
+  - abstention

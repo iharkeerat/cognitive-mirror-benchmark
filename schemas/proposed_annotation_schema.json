@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cognitive Mirror synthetic demonstration record (provisional)",
+  "description": "Provisional schema for constructed demo examples; not a validated dataset.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "example_id",
+    "passage",
+    "candidate_claim",
+    "support_status",
+    "evidence_spans",
+    "recommended_action",
+    "hard_negative",
+    "origin",
+    "split"
+  ],
+  "properties": {
+    "example_id": {
+      "type": "string",
+      "pattern": "^SYN-[0-9]{3}$"
+    },
+    "passage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "support_status": {
+      "enum": [
+        "supported",
+        "not_established",
+        "contradicted",
+        "ambiguous"
+      ]
+    },
+    "evidence_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "start",
+          "end",
+          "text"
+        ],
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "recommended_action": {
+      "enum": [
+        "answer",
+        "abstain",
+        "reject_claim"
+      ]
+    },
+    "hard_negative": {
+      "type": "boolean"
+    },
+    "origin": {
+      "const": "synthetic_constructed"
+    },
+    "split": {
+      "const": "demo_only"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
